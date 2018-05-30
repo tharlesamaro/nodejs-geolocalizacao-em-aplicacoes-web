@@ -31,10 +31,14 @@ server.get("/all", function (req, res, next) {
     return next();
 });
 
-server.get("/geocode", function (req, res, next) {
+server.post("/geocode", function (req, res, next) {
+    const {
+        lat,
+        lng
+    } = req.body
     // Geocode an address with a promise
-    googleMapsClient.geocode({
-            address: '1600 Amphitheatre Parkway, Mountain View, CA'
+    googleMapsClient.reverseGeocode({
+            latlng: [lat, lng]
         }).asPromise()
         .then((response) => {
             const address = response.json.results[0].formatted_address;
