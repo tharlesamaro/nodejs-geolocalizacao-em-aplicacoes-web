@@ -1,0 +1,24 @@
+{
+  "name": "node-maps",
+  "version": "1.0.0",
+  "description": "Aplicação web para manipular dados de geolocalização",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tharlesamaro/nodejs-geolocalizacao-em-aplicacoes-web-back.git"
+  },
+  "author": "Tharles Amaro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tharlesamaro/nodejs-geolocalizacao-em-aplicacoes-web-back/issues"
+  },
+  "homepage": "https://github.com/tharlesamaro/nodejs-geolocalizacao-em-aplicacoes-web-back#readme",
+  "dependencies": {
+    "knex": "^0.14.6",
+    "mysql": "^2.15.0",
+    "restify": "^7.2.0"
+  }
+}
