@@ -44,11 +44,19 @@ server.post("/geocode", function (req, res, next) {
             const address = response.json.results[0].formatted_address;
             const place_id = response.json.results[0].place_id;
             const image = `https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=10&size=300x300&sensor=false`;
-            res.send({
-                place_id,
-                address,
-                image
-            });
+
+            knex('places')
+                .insert({
+                    place_id,
+                    address,
+                    image
+                })
+                .then(() => {
+                    res.send({
+                        address,
+                        image
+                    });
+                }, next)
         })
         .catch((err) => {
             res.send(err);
